@@ -1,0 +1,33 @@
+{
+//required
+"manifest_version":2,
+"name":"Shiny Window",
+"version":"0.0.0.1",
+
+//recommend
+//"default_locale": "ja_JP",
+"description":"(C)BNEI THE IDOLM@STER Shiny Colors を小窓でプレイできるやつ",
+"icons": {
+	"32":"favicon_32.png"
+	},
+
+//option
+"content_scripts":[{
+	"matches":["https://shinycolors.enza.fun/*"],
+	"js":["src/app_ext.js"]
+}],
+
+"browser_action": {
+		"default_icon":"favicon_32.png",
+		"default_title":"",
+		"default_popup":"popup.html"
+},
+
+//"background": {
+//    "scripts": [ "background.js" ],
+//    "persistent": false
+//  },
+
+"permissions":["tabs"]
+
+}
