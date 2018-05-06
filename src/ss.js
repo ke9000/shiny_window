@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 	var get_ss = document.getElementById("get_ss");
 	var img = document.getElementById("img");
+	var dl = document.getElementById("dl");
 
 	get_ss.addEventListener("click", function() {
 		chrome.tabs.query({
@@ -23,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	chrome.runtime.onMessage.addListener(
 		function(message, snder, sendResponse){
 			if (message.type == "img_send") {
-				img.src = message.data
+				img.src = message.data;
+				dl.href = message.data;
 			}
 		}
 	);

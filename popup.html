@@ -1,18 +1,27 @@
 <html>
 <head>
+	<style>
+	body {
+		width : 300px;
+		height: 250px;
+	}
+	</style>
 	<title>popup</title>
 </head>
 <body>
+	<script type="module" src="src/clipboard.min.js"></script>
 	<script src="src/script.js"></script>
 	<script src="src/ss.js"></script>
 	
 	
-	<button id="button1">620*378</button>
-	<button id="button2">1226*720</button>
+	<button id="button1">小型</button> <!-- 620*378 -->
+	<button id="button2">大型</button> <!-- 1226*720 -->
 	
-	<button id="get_ss">update</button>
-	<img id="img" height="200" width="300" src=""></img>
-	<button id="copy">copy</button>
-	
+	<button id="get_ss">SS取得</button>
+	<p><font size="2">SSの取得に成功すると下枠に表示されます</font></p> 
+	<img id="img" height="160" width="284" src=""></img>
+	<br>
+	<p id="copy" ><font size="3"><a id="dl" href="" download="screenshot.png">画像ダウンロード</a></font></button>
+	<p  ><font size="2">画像コピーは画像の上で右クリック→画像をコピー</font></p>
 </body>
 </html>
