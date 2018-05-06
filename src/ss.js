@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function() {
 			url: "https://shinycolors.enza.fun/*"
 		},
 		function(tabs) {
-			var tab_id = tabs[0].id;
+			var Window_Id = tabs[0].windowId;
 			
-			chrome.tabs.sendMessage (
-				tab_id,
+			chrome.runtime.sendMessage (
 				{
-					type: "click_btn"
+					type: "click_btn",
+					windowId : Window_Id
 				}
 			)
 		});

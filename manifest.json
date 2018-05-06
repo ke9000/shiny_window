@@ -1,7 +1,7 @@
 {
 //required
 "manifest_version":2,
-"name":"Shiny Window",
+"name":"Shiny Window(test Ver)",
 "version":"0.0.0.1",
 
 //recommend
@@ -12,11 +12,11 @@
 	},
 
 //option
-"content_scripts":[{
-	"matches":["https://shinycolors.enza.fun/*"],
-	"run_at":"document_end",
-	"js":["src/app_ext.js"]
-}],
+//"content_scripts":[{
+//	"matches":["https://shinycolors.enza.fun/*"],
+//	"run_at":"document_end",
+//	"js":["src/app_ext.js"]
+//}],
 
 "browser_action": {
 		"default_icon":"favicon_32.png",
@@ -24,11 +24,11 @@
 		"default_popup":"popup.html"
 },
 
-//"background": {
-//    "scripts": [ "background.js" ],
-//    "persistent": false
-//  },
+"background": {
+    "scripts": [ "src/background.js" ],
+    "persistent": false
+  },
 
-"permissions":["tabs"]
+"permissions":["tabs","<all_urls>"]
 
 }
