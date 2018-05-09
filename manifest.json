@@ -16,11 +16,11 @@
 "browser_action": {
 		"default_icon":"favicon_32.png",
 		"default_title":"",
-		"default_popup":"popup.html"
+		"default_popup":"src/html/popup.html"
 },
 
 "background": {
-    "scripts": [ "src/background.js" ],
+    "scripts": [ "src/js/background.js" ],
     "persistent": false
   },
 
