@@ -10,22 +10,31 @@ document.addEventListener("DOMContentLoaded", function() {
 			url: "https://shinycolors.enza.fun/*"
 		},
 		function(tabs) {
-			var Window_Id = tabs[0].windowId;
+			if(tabs[0].windowId == "undefined") {
+				alert("シャニマス開いてる???");
+			} else {
+				var Window_Id = tabs[0].windowId;
 			
-			chrome.runtime.sendMessage (
-				{
-					type: "click_btn",
-					windowId : Window_Id
-				}
-			)
-		});
+				chrome.runtime.sendMessage (
+					{
+						type: "click_btn",
+						windowId : Window_Id
+					}
+				)
+			}
+		}
+		);
 	});
 
 	chrome.runtime.onMessage.addListener(
 		function(message, snder, sendResponse){
 			if (message.type == "img_send") {
-				img.src = message.data;
-				dl.href = message.data;
+				if (!message.data) {
+					alert("SS取得に失敗しました");
+				} else {
+					img.src = message.data;
+					dl.href = message.data;
+				}
 			}
 		}
 	);
