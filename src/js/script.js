@@ -27,15 +27,4 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 	button2.addEventListener("click",create_window);
 	
-	var credit = document.getElementById("credit");
-	
-	credit.addEventListener("click", function() {
-		chrome.windows.create ( {
-			"url":"../src/html/credit.html",
-			"type":"popup",
-			"width":490,
-			"height":560
-		});
-	});
-	
 });

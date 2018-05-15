@@ -26,16 +26,27 @@ document.addEventListener("DOMContentLoaded", function() {
 		);
 	});
 
+	var image_data;
 	chrome.runtime.onMessage.addListener(
 		function(message, snder, sendResponse){
 			if (message.type == "img_send") {
-				if (!message.data) {
-					alert("SSæ“¾‚É¸”s‚µ‚Ü‚µ‚½");
-				} else {
 					img.src = message.data;
-					dl.href = message.data;
+					image_data = message.data;
 				}
-			}
 		}
 	);
+	
+	//DLˆ—
+	var download = document.getElementById("copy");
+	download.addEventListener("click", function () {
+		var dl_link = document.createElement("a");
+		dl_link.download = "screenshot.png";
+		dl_link.target="_blank";
+		if (image_data) {
+			dl_link.href = image_data;
+			dl_link.click();
+		}
+	});
+		
+	
 });
