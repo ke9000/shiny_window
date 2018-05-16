@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+	import Clipboard from "./clipboard.min.js";
 	var get_ss = document.getElementById("get_ss");
 	var img = document.getElementById("img");
 	var dl = document.getElementById("dl");
