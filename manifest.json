@@ -1,0 +1,24 @@
+{
+
+"manifest_version":2,
+"name":"Shiny Window",
+"version":"0.0.1",
+
+
+"description":"(C)BNEI THE IDOLM@STER Shiny Colors を小窓でプレイできるやつ",
+"icons": {
+	"32":"dist/image/favicon_32.png"
+	},
+
+
+"browser_action": {
+		"default_icon":"dist/image/favicon_32.png",
+		"default_title":"",
+		"default_popup":"dist/html/new/popup.html"
+},
+
+"options_page":"dist/html/option.html",
+  
+"permissions":["tabs","<all_urls>"]
+
+}
