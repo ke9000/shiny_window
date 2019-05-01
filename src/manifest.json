@@ -1,0 +1,28 @@
+{
+	"manifest_version":2,
+	"name":"Shiny_Window",
+	"version":"0.1.0",
+	
+	
+	"description":"(C)BNEI THE IDOLM@STER Shiny Colors を便利にプレイしたいツール",
+	"icons": {
+		"32":"favicon_32.png"
+		},
+	
+	
+	"browser_action": {
+			"default_icon":"favicon_32.png",
+			"default_title":"",
+			"default_popup":"popup.html"
+	},
+	
+	"background": {
+		"scripts": [ "back.js" ],
+		"persistent": false
+	  },
+	
+	"options_page":"option.html",
+	  
+	"permissions":["tabs","<all_urls>"]
+	
+	}

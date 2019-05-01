@@ -1,27 +1,47 @@
 <html>
-<head>
-	<style>
-	body {
-		width : 300px;
-		height: 300px;
-	}
-	</style>
-	<title>popup</title>
-</head>
-<body>
-	<script src="../js/script.js"></script>
-	<script src="../js/ss.js"></script>
-	
-	
-	<button id="button1">���^</button> <!-- 620*378 -->
-	<button id="button2">��^</button> <!-- 1226*720 -->
-	
-	<button id="get_ss">SS�擾</button>
-	<p><font size="2">SS�̎擾�ɐ�������Ɖ��g�ɕ\������܂�</font></p> 
-	<img id="img" height="160" width="284" src=""></img>
-	<br>
-	<button id="copy" ><font size="3">�摜�_�E�����[�h</font></button>
-	<p  ><font size="2">�摜�R�s�[�͉摜�̏�ŉE�N���b�N���摜���R�s�[</font></p>
-	<p id="credit"><font size="2"><a href="../html/option.html" target="_blank">options</a></font></p>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<title>shiny_window v0.1.0</title>
+		<style>
+			body {
+				width: 300px;
+				height: 420px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id=content style="text-align: center;">
+			<button id="lunch_s" onclick="lunch(1);">小型</button>
+			<button id="lunch_l" onclick="lunch(2);">大型</button>
+			<button id="lunch_c" onclick="lunch(3);">カスタム</button>
+			<br />
+			<br/>
+			<div id="custom"  style="text-align: left;margin-left: 20px;">
+					<span style="font-size:2; ">カスタム幅: </span>
+					<span style="font-size:2; position:relative; left: 85px;">カスタム高さ: </span>
+					<br />
+					<input id="custom_width" type="number" >
+					<input id="custom_height" type="number" >
+				</form>
+			</div>
+			
+			
+			<br />
+			
+			<button id="ss" onclick="get_ss();">SS撮影</button>
+			<br />
+			<p><font style="font-size:2;">SSの取得に成功すると下に表示されます</font></p>
+			<br>
+
+			<div id="disp_ss">
+					<!-- ss表示部 284*160 -->
+			</div>
+			<div id="ss_download">
+				<button id="clip_ss" onclick="clip();">クリップボードにコピー</button>
+				<button id="dl_ss" onclick="dl();">SSダウンロード</button>
+			</div>
+		</div>
+		
+		<script src="main.js"></script>
+	</body>
 </html>
