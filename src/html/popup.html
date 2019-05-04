@@ -5,43 +5,49 @@
 		<style>
 			body {
 				width: 300px;
-				height: 420px;
+				height: 410px;
 			}
 		</style>
 	</head>
 	<body>
 		<div id=content style="text-align: center;">
-			<button id="lunch_s" onclick="lunch(1);">小型</button>
-			<button id="lunch_l" onclick="lunch(2);">大型</button>
-			<button id="lunch_c" onclick="lunch(3);">カスタム</button>
+			<h2 style="margin:0px;">Shiny Window </h2>
+			<p style="text-align:right; margin:0px;">ver 0.1.0</p>
+			<br />
+			<button id="lunch_s">小型</button>
+			<button id="lunch_l">大型</button>
+			<button id="lunch_c">カスタム</button>
 			<br />
 			<br/>
-			<div id="custom"  style="text-align: left;margin-left: 20px;">
-					<span style="font-size:2; ">カスタム幅: </span>
-					<span style="font-size:2; position:relative; left: 85px;">カスタム高さ: </span>
-					<br />
-					<input id="custom_width" type="number" >
-					<input id="custom_height" type="number" >
-				</form>
-			</div>
+			<form id="custom"  style="text-align: left;margin-left: 15px;">
+				<span style="font-size:2; ">カスタム幅: </span>
+				<span style="font-size:2; position:relative; left: 85px;">カスタム高さ: </span>
+				<br />
+				<input id="custom_width" type="number" style="width :135px;">
+				<input id="custom_height" type="number" style="width :135px;">
+			</form>
 			
 			
 			<br />
 			
-			<button id="ss" onclick="get_ss();">SS撮影</button>
+			<button id="ss">SS撮影</button>
 			<br />
-			<p><font style="font-size:2;">SSの取得に成功すると下に表示されます</font></p>
-			<br>
+			<span style="font-size:10;">SSの取得に成功すると下に表示されます</span>
+			<br />
 
 			<div id="disp_ss">
-					<!-- ss表示部 284*160 -->
+				<!-- ss表示部 284*160 -->
+				<img id="img" height="160" width="284" src=""></img>
 			</div>
+
+			<br />
+
 			<div id="ss_download">
-				<button id="clip_ss" onclick="clip();">クリップボードにコピー</button>
-				<button id="dl_ss" onclick="dl();">SSダウンロード</button>
+				<button id="clip_ss">クリップボードにコピー</button>
+				<button id="dl_ss">SSダウンロード</button>
 			</div>
 		</div>
 		
-		<script src="main.js"></script>
+		<script src="../js/main.js"></script>
 	</body>
 </html>
