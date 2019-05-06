@@ -60,22 +60,24 @@ function get_ss(){
 }
 
 //COPY_to_CLIPBOARD
-document.getElementById("clip_ss").addEventListener("click",function(){clip();});
+// document.getElementById("clip_ss").addEventListener("click",function(){clip();});
 
-function clip(){
-	if(imgdata){
-		const data = new DataTransfer();
-		data.items.add(imgdata,"image/png");
-		if(data){
-			navigator.clipboard.write(data);
-			console.info("copied to clipboard.");
-		} else {
-			console.error("Failed to Write Clipboard data");
-		}
-	} else{
-		console.error("failed to get ScreenShot.");
-	}
-}
+// function clip(){
+// 	if(imgdata){
+// 		const data = new DataTransfer();
+// 		data.items.add(imgdata,"image/png");
+// 		if(data){
+// 			navigator.clipboard.write(data);
+// 			console.info("copied to clipboard.");
+// 		} else {
+// 			console.error("Failed to Write Clipboard data");
+// 		}
+// 	} else{
+// 		console.error("failed to get ScreenShot.");
+// 	}
+// }
+
+//Wating Correspond Chrome's clipboard API(https://github.com/ke9000/shiny_window/issues/7#issuecomment-489324144)
 
 //DL_SS
 document.getElementById("dl_ss").addEventListener("click",function(){dl();});
