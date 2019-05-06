@@ -10,9 +10,11 @@
 		</style>
 	</head>
 	<body>
-		<div id=content style="text-align: center;">
+		<div id=header style="text-align:center;">
 			<h2 style="margin:0px;">Shiny Window </h2>
-			<p style="text-align:right; margin:0px;">ver 0.1.0</p>
+			<p style="text-align:right; margin:0px;">ver 1.0.0</p>
+		</div>
+		<div id=content style="text-align: center;">
 			<br />
 			<button id="lunch_s">小型</button>
 			<button id="lunch_l">大型</button>
@@ -26,26 +28,26 @@
 				<input id="custom_width" type="number" style="width :135px;">
 				<input id="custom_height" type="number" style="width :135px;">
 			</form>
-			
-			
 			<br />
-			
-			<button id="ss">SS撮影</button>
+			<div id="ss">
+				<button id="ss">SS撮影</button>
+				<button id="dl_ss">SSダウンロード</button>
+				<br />
+				<span style="font-size:10;">SSの取得に成功すると下に表示されます</span>
+			</div>
 			<br />
-			<span style="font-size:10;">SSの取得に成功すると下に表示されます</span>
-			<br />
-
 			<div id="disp_ss">
 				<!-- ss表示部 284*160 -->
 				<img id="img" height="160" width="284" src=""></img>
 			</div>
-
 			<br />
-
-			<div id="ss_download">
+			<!-- <div id="ss_download">
 				<button id="clip_ss">クリップボードにコピー</button>
 				<button id="dl_ss">SSダウンロード</button>
-			</div>
+			</div> -->
+		</div>
+		<div id=footer>
+			<p><a href="credit.html" target="_blank">Credit</a></p>
 		</div>
 		
 		<script src="../js/main.js"></script>
