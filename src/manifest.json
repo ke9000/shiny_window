@@ -17,9 +17,9 @@
 	
 	"background": {
 		"scripts": [ "js/back.js" ],
-		"persistent": false
+		"persistent": true
 	  },
 	
-	"permissions":["tabs","<all_urls>"]
+	"permissions":["tabs","webRequest","<all_urls>"]
 	
 	}
