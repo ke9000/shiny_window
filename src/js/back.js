@@ -1,8 +1,8 @@
 chrome.webRequest.onBeforeSendHeaders.addListener(
 	function (details) {
-		console.log(details.url);
+		//console.log(details.url+"\n"+details.requestHeaders );
 		console.log(details.requestHeaders);
 	},
-	{urls: ['https://shinycolors.enza.fun/*']},
+	{urls: ['https://api.shinycolors.enza.fun/*']},
 	["requestHeaders"]
 );
