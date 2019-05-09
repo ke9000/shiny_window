@@ -1,6 +1,8 @@
-Chrome.webRequest.onSendHeaders.addListener(function(detail){
-	if(detail.url == "https://shinycolors.enza.fan/*"){
-		console.log(detail.url);
-		console.log(detail.HttpHeaders);
-	}
-});
+chrome.webRequest.onBeforeSendHeaders.addListener(
+	function (details) {
+		console.log(details.url);
+		console.log(details.requestHeaders);
+	},
+	{urls: ['https://shinycolors.enza.fun/*']},
+	["requestHeaders"]
+);
