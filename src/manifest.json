@@ -1,16 +1,19 @@
 {
 	"manifest_version":2,
-	"name":"Shiny_Window",
+	"name":"Shiny Window",
 	"version":"1.0.0",
 	
 	
-	"description":"(C)BNEI THE IDOLM@STER Shiny Colors を便利にプレイしたいツール",
+
+	"description":"シャニマスを授業中もとい便利にプレイしたい人のためのツール",
 	"icons": {
-		"32":"img/favicon_32.png"
+		"32":"img/icon_tmp_32.png",
+		"64":"img/icon_tmp_64.png",
+		"128":"img/icon_tmp_128.png"
 		},
 	
 	"browser_action": {
-			"default_icon":"img/favicon_32.png",
+			"default_icon":"img/icon_tmp_32.png",
 			"default_title":"",
 			"default_popup":"html/popup.html"
 	},

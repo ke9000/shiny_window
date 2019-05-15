@@ -11,6 +11,7 @@ chrome.storage.sync.get(["left"], function(result){
 		left_data = result.left;
 	} else {
 		console.error("failed to get last window position.(left)")
+		//なんか変なタイミングで発火してることがある
 	}
 	console.log(result.left);
 });
