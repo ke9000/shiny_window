@@ -15,11 +15,19 @@
 			"default_popup":"html/popup.html"
 	},
 	
+	"content_scripts": [ 
+	{
+		"matches": [
+			"https://shinycolors.enza.fun/*"
+		],
+		"js": ["js/enza.js"]
+	}],
+
 	"background": {
 		"scripts": [ "js/back.js" ],
-		"persistent": true
+		"persistent": false
 	  },
 	
-	"permissions":["tabs","webRequest","<all_urls>"]
+	"permissions":["tabs","storage","<all_urls>"]
 	
 	}

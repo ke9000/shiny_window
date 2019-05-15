@@ -3,6 +3,26 @@ document.getElementById("lunch_s").addEventListener("click",function(){lunch_win
 document.getElementById("lunch_l").addEventListener("click",function(){lunch_window(2);});
 document.getElementById("lunch_c").addEventListener("click",function(){lunch_window(3);});
 
+// Get LastPosition on open Popup.
+let left_data=0, top_data=0;
+
+chrome.storage.sync.get(["left"], function(result){
+	if(result.left){
+		left_data = result.left;
+	} else {
+		console.error("failed to get last window position.(left)")
+	}
+	console.log(result.left);
+});
+chrome.storage.sync.get(["top"],function(result){
+	if(result){
+		top_data = result.top;
+	} else {
+		console.error("failed to get last window position.(top)")
+	}
+	console.log(result.top);
+});
+
 function lunch_window(mode){
 	let width, height;
 	
@@ -30,7 +50,9 @@ function lunch_window(mode){
 			"url": "https://shinycolors.enza.fun",
 			"type":"popup",
 			"width":Number(width),
-			"height":Number(height)
+			"height":Number(height),
+			"top":top_data,
+			"left":left_data
 		});
 	} else {
 		console.error("Failed to get size.")
