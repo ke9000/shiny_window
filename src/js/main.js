@@ -23,6 +23,22 @@ chrome.storage.sync.get(["top"],function(result){
 	}
 	console.log(result.top);
 });
+//mutecheck
+let mute_state =false;
+chrome.storage.sync.get(["mute"],function(result){
+	let state_text;
+	if(result){
+		mute_state = result.mute;
+		if(result.mute == true){
+			state_text = "ミュート中"
+		} else if(result.mute == false){
+			state_text = "ミュート解除中"
+		}
+		document.getElementById("mute_state").innerHTML= state_text;
+	} else {
+		console.error("Failed to get mute state.");
+	}
+})
 
 function lunch_window(mode){
 	let width, height;
@@ -127,4 +143,23 @@ function getdate(){
 	let sec = ("0"+date.getSeconds()).slice(-2);
 
 	return y+"-"+m+"-"+d+"-"+h+min+"."+sec;
+}
+
+//Mute Tab
+document.getElementById("mute").addEventListener("click",function(){mute();});
+function mute(){
+	chrome.tabs.query({
+		active:true,
+		windowType: "popup",
+		url: "https://shinycolors.enza.fun/*"
+	}, function(tabs){
+		if(tabs[0]){
+			tabs[0].mutedInfo.muted = !(mute_state);
+			chrome.tabs.syng.set({"mute":!(mute_state)});
+			location.reload;
+		}
+		
+	})
+	
+
 }
