@@ -24,21 +24,21 @@ chrome.storage.sync.get(["top"],function(result){
 	console.log(result.top);
 });
 //mutecheck
-let mute_state =false;
-chrome.storage.sync.get(["mute"],function(result){
-	let state_text;
-	if(result){
-		mute_state = result.mute;
-		if(result.mute == true){
-			state_text = "ミュート中"
-		} else if(result.mute == false){
-			state_text = "ミュート解除中"
-		}
-		document.getElementById("mute_state").innerHTML= state_text;
-	} else {
-		console.error("Failed to get mute state.");
-	}
-})
+// let mute_state =false;
+// chrome.storage.sync.get(["mute"],function(result){
+// 	let state_text;
+// 	if(result){
+// 		mute_state = result.mute;
+// 		if(result.mute == true){
+// 			state_text = "ミュート中"
+// 		} else if(result.mute == false){
+// 			state_text = "ミュート解除中"
+// 		}
+// 		document.getElementById("mute_state").innerHTML= state_text;
+// 	} else {
+// 		console.error("Failed to get mute state.");
+// 	}
+// })
 
 function lunch_window(mode){
 	let width, height;
@@ -99,22 +99,24 @@ function get_ss(){
 }
 
 //COPY_to_CLIPBOARD
-// document.getElementById("clip_ss").addEventListener("click",function(){clip();});
+document.getElementById("clip_ss").addEventListener("click",function(){clip();});
 
-// function clip(){
-// 	if(imgdata){
-// 		const data = new DataTransfer();
-// 		data.items.add(imgdata,"image/png");
-// 		if(data){
-// 			navigator.clipboard.write(data);
-// 			console.info("copied to clipboard.");
-// 		} else {
-// 			console.error("Failed to Write Clipboard data");
-// 		}
-// 	} else{
-// 		console.error("failed to get ScreenShot.");
-// 	}
-// }
+async function clip(){
+
+		console.log("Wriing to clipbard");  
+	
+		const response = await fetch(imgdata);
+		const blob = await response.blob();
+	
+		const item = new ClipboardItem({'image/png': blob});
+		await navigator.clipboard.write([item]).then(function() {
+		  console.log("Copied to clipboard successfully!");
+		}, function(error) {
+		  console.error("unable to write to clipboard. Error:");
+		  console.log(error);
+		});
+//code from https://stackoverflow.com/questions/57278923/chrome-76-copy-content-to-clipboard-using-navigator
+}
 
 //Wating Correspond Chrome's clipboard API(https://github.com/ke9000/shiny_window/issues/7#issuecomment-489324144)
 
@@ -146,20 +148,18 @@ function getdate(){
 }
 
 //Mute Tab
-document.getElementById("mute").addEventListener("click",function(){mute();});
-function mute(){
-	chrome.tabs.query({
-		active:true,
-		windowType: "popup",
-		url: "https://shinycolors.enza.fun/*"
-	}, function(tabs){
-		if(tabs[0]){
-			tabs[0].mutedInfo.muted = !(mute_state);
-			chrome.tabs.syng.set({"mute":!(mute_state)});
-			location.reload;
-		}
+// document.getElementById("mute").addEventListener("click",function(){mute();});
+// function mute(){
+// 	chrome.tabs.query({
+// 		active:true,
+// 		windowType: "popup",
+// 		url: "https://shinycolors.enza.fun/*"
+// 	}, function(tabs){
+// 		if(tabs[0]){
+// 			tabs[0].mutedInfo.muted = !(mute_state);
+// 			chrome.tabs.syng.set({"mute":!(mute_state)});
+// 			location.reload;
+// 		}
 		
-	})
-	
-
-}
+// 	})
+//}
