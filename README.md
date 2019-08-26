@@ -16,6 +16,10 @@ for mac user: `brew install jq`
 **For windows User: This batch needs `jq-win64.exe`. If you selected other version or other name, you need change batch file.**
 
 # install
+## Release Version
+- Donwload Link HERE: https://chrome.google.com/webstore/detail/mligoomedmkbafpknpchmfkamcjpoehl/
+
+## Development Version
 1. Extract zip archive.
 2. Open [Chrome://extensions](Chrome://extensions) .  
 3. Enable "Developer Mode".  
