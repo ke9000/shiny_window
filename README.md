@@ -4,7 +4,7 @@ THE IDOLM@STER Shiny Colors を小窓でプレイできるやつ
   
 Enable to play " THE IDOLM@STER Shiny Colors" on popup and take screenshots easily.  
   
-Work on only GOOGLE Chrome Extension.  
+Work on only GOOGLE Chrome V76 Extension.  
 
 # How to Build
 1. install `jq` form [here](https://stedolan.github.io/jq/)
